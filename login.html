@@ -71,7 +71,7 @@ L.html
     
                 const email = document.getElementById('email').value;
                 const verificationCode = document.getElementById('code').value;
-    
+     
                 const response = await fetch('http://localhost:3000/verify', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
