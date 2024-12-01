@@ -38,25 +38,25 @@
 
         .form-container {
             background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
+            padding: 50px;
+            border-radius: 90px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 300px;
+            width: 400px;
             text-align: center;
         }
 
-        h2 {
+        h1 {
             color: #007bff;
             margin-bottom: 20px;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-align: left;
         }
 
         label {
-            font-size: 14px;
+            font-size: 19px;
             color: #333;
         }
 
@@ -89,17 +89,14 @@
 </head>
 <body>
     <div class="form-container">
-        <h2>Create an Account</h2>
+        <h1>Account</h1>
         <form id="registrationForm">
             <div class="form-group">
                 <label for="firstName">First Name</label>
                 <input type="text" id="firstName" name="firstName" required>
             </div>
            
-            <div class="form-group">
-                <label for="city">City</label>
-                <input type="text" id="city" name="city" required>
-            </div>
+            
            
             <div class="form-group">
                 <label for="email">Email Address</label>
@@ -111,14 +108,14 @@
                 <input type="password" id="password" name="password" required>
             </div>
            
-            <button type="submit" class="submit-btn">Sign Up</button>
+            <button type="submit" class="submit-btn">Find your Gym</button>
         </form>
     </div>
 
     <script>
         document.getElementById('registrationForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            alert('Registration successful! Check your email for a verification code.');
+            alert('Registration successful!.');
             window.location.href = 'login.html';
         });
     </script>
