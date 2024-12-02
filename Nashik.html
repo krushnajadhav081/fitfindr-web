@@ -18,12 +18,13 @@
             text-align: center;
         }
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: auto;
-            padding: 20px;
+            padding: 15px;
         }
         .gym-card {
             display: flex;
+            flex-direction: column;
             border: 1px solid #ddd;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -32,16 +33,15 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .gym-card img {
-            width: 150px;
-            height: 150px;
+            width: 100%;
+            height: auto;
             object-fit: cover;
         }
         .gym-details {
-            flex: 1;
             padding: 15px;
         }
         .gym-name {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: #333;
         }
@@ -54,11 +54,15 @@
             margin-top: 10px;
         }
         .btn {
+            display: inline-block;
             text-decoration: none;
             color: white;
-            padding: 10px 15px;
+            padding: 10px;
             border-radius: 5px;
-            margin-right: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
         .btn-whatsapp {
             background-color: #25d366;
@@ -115,4 +119,4 @@
         <p>&copy; 2024 FitFindr | Designed by Krishna Chandrakant Jadhav | Email: <a href="mailto:krushna081@gmail.com" style="color: #007BFF;">krushna081@gmail.com</a></p>
     </footer>
 </body>
-</html
+</html>
