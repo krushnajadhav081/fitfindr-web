@@ -1,31 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitFindr Registration</title>
-<script>
-    document.getElementById('registrationForm').addEventListener('submit', async function(event) {
-        event.preventDefault();
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
 
-        const firstName = document.getElementById('firstName').value;
-        const city = document.getElementById('city').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+            const firstName = document.getElementById('firstName').value;
+            const city = document.getElementById('city').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-        const response = await fetch('http://localhost:3000/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ firstName, city, email, password }),
+            const response = await fetch('http://localhost:3000/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ firstName, city, email, password }),
+            });
+
+            const result = await response.json();
+            alert(result.message);
         });
-
-        const result = await response.json();
-        alert(result.message);
-    });
-</script>
+    </script>
     <style>
-
         body {
             font-family: Arial, sans-serif;
             background-color: #e9f0f5;
@@ -87,6 +86,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="form-container">
         <h1>Account</h1>
@@ -95,29 +95,30 @@
                 <label for="firstName">First Name</label>
                 <input type="text" id="firstName" name="firstName" required>
             </div>
-           
-            
-           
+
+
+
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" required>
             </div>
-           
+
             <div class="form-group">
                 <label for="password">New Password</label>
                 <input type="password" id="password" name="password" required>
             </div>
-           
+
             <button type="submit" class="submit-btn">Find your Gym</button>
         </form>
     </div>
 
     <script>
-        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        document.getElementById('registrationForm').addEventListener('submit', function (event) {
             event.preventDefault();
             alert(' let`s find your Gym');
             window.location.href = 'login.html';
         });
     </script>
 </body>
+
 </html>
