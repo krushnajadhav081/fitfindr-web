@@ -1,110 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitFindr - Your Fitness Partner</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-69105996B2"></script>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5KZFHEQEXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5KZFHEQEXX');
-</script>
+    <title>FitFindr Gym | Redirecting...</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        a{
-            text-decoration: none;
-        }
         body {
-            background-image: url(images.jpeg);
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
             text-align: center;
         }
-
-        .container {
-            /* background-image: url(images.jpeg); */
+        
+        .redirect-container {
             max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
         }
-
-        h1 {
-            color: #007bff;
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
         }
-
+        
+        .logo span {
+            color: #888;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(255,255,255,0.1);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
         p {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 18px;
-            margin: 10px 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
         }
-
-        .start-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 7px;
-            cursor: pointer;
-            text-decoration: none;
+        
+        .manual-link {
+            color: white;
+            text-decoration: underline;
+            font-weight: 500;
         }
-
-        .start-button:hover {
-            background-color: #0056b3;
-        }
-
-        footer {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #666;
+        
+        .manual-link:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
-
 <body>
-   
-    <div class="container">
-        <h1>Welcome to FitFindr</h1>
-        <p>Your ultimate partner in finding fitness centers and classes near you!</p>
-        <p>FitFindr helps you stay active by locating gyms, yoga, and dance studios wherever you are.</p>
-
-        <a href="register.html" class="start-button">Start</a>
-        <div class="container">
-            <h1>What is FitFinder</h1>
-            <h2>"find your Perfect fitness class Anytime Anywhere"</h2>
-            <h1>Why Choose FitFinder?</h1>
-            <p>Convenience: Access fitness options wherever you are.
-                Flexibility: Pay per session or use lifetime memberships.
-                Variety: Explore gyms, yoga, dance, Zumba, and more!
-                Start Your Fitness Journey Today!</p>
-    
-                <h1>How FitFinder Works</h1>
-                <p>1. Find Classes Nearby: Enter your location and see all available fitness options.</p>
-                <p>2. Explore Options: View details about gyms, yoga centers, or dance studios, including reviews and
-                    facilities.</p>
-                <p>3. Book Instantly: Reserve your spot with just one click.</p>
-                <p>4. Travel-Friendly: Use FitFinder wherever you go to stay active and consistent.</p>
-
-               <a href="contact us.html"> <h1>About Us and Contact</h1></a>
-                <p>FitFinder is dedicated to making fitness accessible and enjoyable for everyone. Join our growing community and take the first step toward a healthier you!</p>
-        </div>
-
-        <footer>
-            &copy; 2024 Krishna Chandrakant Jadhav. All rights reserved..<br>
-            Contact us at: <a href="Contact Us.html">krushnacjadhav0807@gmail.com</a>
-        </footer>
+    <div class="redirect-container">
+        <div class="logo">FitFindr  </div>
+        <div class="spinner"></div>
+        <p>Redirecting to login...</p>
+        <p><small>If you're not redirected automatically, <a href="login.html" class="manual-link">click here</a></small></p>
     </div>
-</body>
 
+    <script>
+        // Redirect to login page immediately
+        window.location.href = 'login.html';
+    </script>
+</body>
 </html>

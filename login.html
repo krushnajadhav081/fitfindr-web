@@ -1,83 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find your Gym</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            color: #007bff;
-        }
-
-
-        .start-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 7px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .start-button:hover {
-            background-color: #0056b3;
-        }
-
-        img {
-            border: 0px solid;
-            border-radius: 20px;
-            width: 290px;
-            box-sizing: border-box;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #666;
-        }
-    </style>
+    <title>Login | FitFindr Gym</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
-
 <body>
-    <div class="container">
-        <h1>Welcome to FitFindr</h1>
-        <img src="Nashik.png" alt="">
-        <br>
-        <a href="Nashik.html" class="start-button">Nashik</a> <br>
-        <a href="Nashik road.html" class="start-button">Nashik road</a>
-        <br>
-        <a href="Nashik road.html" class="start-button">Dwarka</a>
-        <br>
-        <a href="Nashik road.html" class="start-button">jail road</a>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo">
+                    <a href="index.html">FitFindr </a>
+                </div>
+                <h1>Welcome Back</h1>
+                <p>Sign in to your account</p>
+            </div>
 
-        <footer>
-            &copy; 2024 Krishna Chandrakant Jadhav. All rights reserved..<br>
-            Contact us at: <a href="Contact Us.html">krushnacjadhav0807@gmail.com</a>
-        </footer>
+            <div class="login-body">
+                <form id="loginForm">
+                    <!-- Show Registered Users Button -->
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <button type="button" id="showUsersBtn" style="padding: 6px 16px; background: var(--secondary); color: white; border: none; border-radius: 4px; font-size: 0.85rem; cursor: pointer;">
+                            <i class="fas fa-users"></i> Show Registered Users
+                        </button>
+                    </div>
+                    
+                    <!-- Registered Users Section -->
+                    <div id="registeredUsersSection" style="background: #f8f9fa; border: 1px solid #dee2e6; border-radius: var(--radius); padding: 1rem; margin-bottom: 1.5rem; display: none;">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 0.9rem;">
+                            <i class="fas fa-users"></i> Registered Users (Click to Login)
+                        </h4>
+                        <div id="usersList" style="max-height: 120px; overflow-y: auto;"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-container">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-container">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword()">
+                                <i class="fas fa-eye" id="toggleIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn login-btn">
+                        <i class="fas fa-sign-in-alt"></i> Sign In
+                    </button>
+                </form>
+                
+                <div class="divider">
+                    <span>or</span>
+                </div>
+                
+                <div class="social-login">
+                    <button class="btn social-btn google-btn">
+                        <i class="fab fa-google"></i> Continue with Google
+                    </button>
+                    <button class="btn social-btn facebook-btn">
+                        <i class="fab fa-facebook-f"></i> Continue with Facebook
+                    </button>
+                </div>
+                
+                <div class="signup-link">
+                    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+                </div>
+                
+                <!-- Test Users Info -->
+                <div class="test-users-info" style="margin-top: 1.5rem; padding: 1rem; background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%); border-radius: 12px; border: 1px solid #e1bee7;">
+                    <h4 style="margin: 0 0 0.75rem 0; color: #4a148c; font-size: 0.9rem; text-align: center; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-user" style="margin-right: 8px; color: #7b1fa2;"></i>
+                        Demo Test Account
+                    </h4>
+                    <div style="font-size: 0.85rem; color: #4a148c; line-height: 1.4; text-align: center;">
+                        <div style="margin-bottom: 0.75rem;">
+                            <strong>john@demo.com</strong><br>
+                            <span style="color: #7b1fa2;">john123</span> (Premium Member)
+                        </div>
+                        <div style="padding-top: 0.5rem; border-top: 1px solid #ce93d8; font-size: 0.75rem;">
+                            <strong>💡 Click "Show Registered Users" then click the user for instant login!</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       <div class="login-image">
+    <div class="image-overlay">
+        <h2>Find Your Perfect Fitness Class</h2>
+        <p>
+            FitFindr helps you discover nearby gym, yoga, dance, and fitness classes—
+            anytime, anywhere.
+        </p>
+
+        <div class="stats">
+            <div class="stat">
+                <h3>5000+</h3>
+                <p>Active Users</p>
+            </div>
+            <div class="stat">
+                <h3>300+</h3>
+                <p>Fitness Partners</p>
+            </div>
+            <div class="stat">
+                <h3>25+</h3>
+                <p>Cities Covered</p>
+            </div>
+        </div>
     </div>
-</body>
+</div>
 
+
+    <script src="js/demo-cloud.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+</body>
 </html>

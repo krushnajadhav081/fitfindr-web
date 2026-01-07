@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule | FitFindr Gym</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #333333;
+            --accent: #555555;
+            --light: #f5f5f5;
+            --white: #ffffff;
+            --text: #222222;
+            --radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #888;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: #ccc;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 150px 0 80px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        thead tr {
+            background: var(--primary);
+            color: white;
+        }
+        
+        tbody tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="home.html" class="logo">FitFindr<span>Class</span></a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Weekly Class Schedule</h1>
+            <p>Plan your week with our comprehensive class schedule</p>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600;">6:00 AM</td>
+                            <td>Yoga<br><small>Sarah</small></td>
+                            <td>CrossFit<br><small>Mike</small></td>
+                            <td>Yoga<br><small>Sarah</small></td>
+                            <td>CrossFit<br><small>Mike</small></td>
+                            <td>HIIT<br><small>Emily</small></td>
+                            <td>Yoga<br><small>Sarah</small></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">9:00 AM</td>
+                            <td>Spinning<br><small>Emily</small></td>
+                            <td>Yoga<br><small>Sarah</small></td>
+                            <td>Spinning<br><small>Emily</small></td>
+                            <td>Yoga<br><small>Sarah</small></td>
+                            <td>CrossFit<br><small>Mike</small></td>
+                            <td>Spinning<br><small>Emily</small></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">5:00 PM</td>
+                            <td>CrossFit<br><small>Mike</small></td>
+                            <td>HIIT<br><small>Emily</small></td>
+                            <td>CrossFit<br><small>Mike</small></td>
+                            <td>HIIT<br><small>Emily</small></td>
+                            <td>Yoga<br><small>Sarah</small></td>
+                            <td>CrossFit<br><small>Mike</small></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">7:00 PM</td>
+                            <td>HIIT<br><small>Emily</small></td>
+                            <td>Spinning<br><small>Emily</small></td>
+                            <td>HIIT<br><small>Emily</small></td>
+                            <td>Spinning<br><small>Emily</small></td>
+                            <td>Spinning<br><small>Emily</small></td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 FitFindr Gym. All rights reserved. | Designed by Krushna Jadhav for </p>
+        </div>
+    </footer>
+
+    <script>
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (!isLoggedIn) {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>

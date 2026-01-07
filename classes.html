@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Classes | FitFindr</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #333333;
+            --accent: #555555;
+            --light: #f5f5f5;
+            --white: #ffffff;
+            --text: #222222;
+            --radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #888;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #ccc;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+            url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 160px 0 90px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Classes */
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .class-card {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+
+        .class-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+        }
+
+        .class-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+        }
+
+        .class-content {
+            padding: 1.5rem;
+        }
+
+        .class-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f0f;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 13px;
+            opacity: 0.75;
+        }
+        /* ===== Location / Nearby Gyms ===== */
+#location {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #ffffff, #f7f9fc);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+#location h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+#location p {
+    font-size: 16px;
+    color: #555;
+    max-width: 520px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+#location img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Location Buttons ===== */
+#location .start-button {
+    display: inline-block;
+    margin: 8px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: #000;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#location .start-button:hover {
+    background: #007bff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 123, 255, 0.3);
+}
+
+        
+    </style>
+    
+</head>
+
+<body>
+
+<header>
+    <div class="container nav-container">
+        <a href="home.html" class="logo">FitFindr<span>.com</span></a>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="classes.html">Classes</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i></a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="page-header">
+    <div class="container">
+        <h1>Explore Fitness Classes</h1>
+        <p>Discover popular classes offered by partner gyms & studios near you</p>
+    </div>
+</div>
+
+
+<!-- ===== Location / Nearby Gyms ===== -->
+<div class="container" id="location">
+    <h2>Share Your Location</h2>
+    <p>Select your area to see nearby gyms and available classes.</p>
+
+    <img src="Nashik.png" alt="Nashik Map">
+
+    <div>
+        <a href="loc.html" class="start-button">Nashik</a>
+        <a href="loc.html" class="start-button">Nashik Road</a>
+        <a href="loc.html" class="start-button">Dwarka</a>
+        <a href="loc.html" class="start-button">Jail Road</a>
+    </div>
+</div>
+<section>
+    <div class="container">
+        <div class="classes-grid">
+
+            <!-- Yoga -->
+            <div class="class-card">
+                <div class="class-img" style="background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b');">YOGA</div>
+                <div class="class-content">
+                    <h3>Yoga & Mindfulness</h3>
+                    <p>Improve flexibility, balance, and mental peace with certified yoga instructors.</p>
+                    <div class="class-meta">
+                        <span><i class="far fa-clock"></i> 60 min</span>
+                        <span><i class="fas fa-users"></i> All Levels</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CrossFit -->
+            <div class="class-card">
+                <div class="class-img" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b');">CROSSFIT</div>
+                <div class="class-content">
+                    <h3>CrossFit Training</h3>
+                    <p>High-intensity workouts focused on strength, endurance, and performance.</p>
+                    <div class="class-meta">
+                        <span><i class="far fa-clock"></i> 45 min</span>
+                        <span><i class="fas fa-users"></i> Advanced</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Zumba -->
+<div class="class-card">
+    <div class="class-img" style="background-image:url('https://images.unsplash.com/photo-1594737625785-cbc6f1bc0c54');">ZUMBA</div>
+    <div class="class-content">
+        <h3>Zumba Dance Fitness</h3>
+        <p>High-energy dance workouts combining fun music with effective cardio.</p>
+        <div class="class-meta">
+            <span><i class="far fa-clock"></i> 50 min</span>
+            <span><i class="fas fa-users"></i> All Levels</span>
+        </div>
+    </div>
+</div>
+
+<!-- Strength Training -->
+<div class="class-card">
+    <div class="class-img" style="background-image:url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61');">STRENGTH</div>
+    <div class="class-content">
+        <h3>Strength Training</h3>
+        <p>Build muscle, improve posture, and increase overall body strength.</p>
+        <div class="class-meta">
+            <span><i class="far fa-clock"></i> 60 min</span>
+            <span><i class="fas fa-users"></i> Intermediate</span>
+        </div>
+    </div>
+</div>
+
+<!-- Functional Training -->
+<div class="class-card">
+    <div class="class-img" style="background-image:url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1');">FUNCTIONAL</div>
+    <div class="class-content">
+        <h3>Functional Training</h3>
+        <p>Improve everyday movement, balance, agility, and coordination.</p>
+        <div class="class-meta">
+            <span><i class="far fa-clock"></i> 45 min</span>
+            <span><i class="fas fa-users"></i> All Levels</span>
+        </div>
+    </div>
+</div>
+
+<!-- Bodyweight -->
+<div class="class-card">
+    <div class="class-img" style="background-image:url('https://images.unsplash.com/photo-1599058917212-d750089bc07e');">BODYWEIGHT</div>
+    <div class="class-content">
+        <h3>Bodyweight Training</h3>
+        <p>No equipment workouts using your own body for strength and endurance.</p>
+        <div class="class-meta">
+            <span><i class="far fa-clock"></i> 40 min</span>
+            <span><i class="fas fa-users"></i> Beginner</span>
+        </div>
+    </div>
+</div>
+
+<!-- Cardio Blast -->
+<div class="class-card">
+    <div class="class-img" style="background-image:url('https://images.unsplash.com/photo-1579758629938-03607ccdbaba');">CARDIO</div>
+    <div class="class-content">
+        <h3>Cardio Blast</h3>
+        <p>Heart-pumping workouts designed to burn calories fast.</p>
+        <div class="class-meta">
+            <span><i class="far fa-clock"></i> 35 min</span>
+            <span><i class="fas fa-users"></i> All Levels</span>
+        </div>
+    </div>
+</div>
+
+            <!-- HIIT -->
+            <div class="class-card">
+                <div class="class-img" style="background-image:url('https://images.unsplash.com/photo-1518611012118-696072aa579a');">HIIT</div>
+                <div class="class-content">
+                    <h3>HIIT Workouts</h3>
+                    <p>Short, intense training sessions designed for fat loss and stamina.</p>
+                    <div class="class-meta">
+                        <span><i class="far fa-clock"></i> 30 min</span>
+                        <span><i class="fas fa-users"></i> All Levels</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>
+            © 2025 FitFindr. All rights reserved.<br>
+            Designed & Developed by <strong>Krushna Chandrakant Jadhav</strong>
+        </p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = 'login.html';
+        }
+    });
+</script>
+
+</body>
+</html>

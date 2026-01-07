@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Classes | FitFindr</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #333333;
+            --accent: #007bff;
+            --accent-hover: #0056b3;
+            --light: #f5f5f5;
+            --white: #ffffff;
+            --text: #222222;
+            --radius: 12px;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+            --shadow-hover: 0 15px 35px rgba(0,0,0,0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo span {
+            color: #888;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,123,255,0.5)), 
+                        url('https://images.unsplash.com/photo-1554284126-3e4ff0b3f0c2?auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--primary));
+            border-radius: 2px;
+        }
+
+        /* Location Section */
+        #location {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 50px 40px;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        #location:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        #location h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        #location p {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+
+        #location img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: var(--radius);
+            margin-bottom: 35px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        #location img:hover {
+            transform: scale(1.05);
+        }
+
+        .start-button {
+            display: inline-block;
+            margin: 8px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .start-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .start-button:hover::before {
+            left: 100%;
+        }
+
+        .start-button:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,123,255,0.4);
+        }
+
+        .start-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Gym Cards */
+        .gym-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #e8e8e8;
+        }
+
+        .gym-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent);
+        }
+
+        .gym-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gym-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .gym-details {
+            padding: 25px;
+        }
+
+        .gym-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .gym-address {
+            font-size: 1rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gym-address::before {
+            content: '📍';
+        }
+
+        .gym-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .gym-buttons a {
+            flex: 1;
+            min-width: 140px;
+            padding: 12px 20px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .gym-buttons a:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+        }
+
+        .gym-buttons a:first-child::before {
+            content: '💬';
+        }
+
+        .gym-buttons a:last-child::before {
+            content: '✉️';
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        footer strong {
+            color: var(--accent);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            #location {
+                padding: 30px 20px;
+            }
+
+            .start-button {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .gym-buttons {
+                flex-direction: column;
+            }
+
+            .gym-buttons a {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.4rem;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+            }
+
+            .page-header {
+                padding: 140px 0 80px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="home.html" class="logo">FitFindr<span>.com</span></a>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="classes.html">Classes</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="settings.html"><i class="fas fa-cog"></i></a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="page-header">
+    <div class="container">
+        <h1>FitFindr Gyms</h1>
+        <p>Your guide to gyms in Nashik, Nashik Road, Dwarka & Jail Road</p>
+    </div>
+</div>
+
+<div class="container" id="location">
+    <h2>Share Your Location</h2>
+    <p>Select your area to see nearby gyms and available classes.</p>
+    <img src="https://images.unsplash.com/photo-1549366029-bd6a0cfb1f1e?auto=format&fit=crop&w=800&q=80" alt="Nashik Map">
+    <div>
+        <a href="#nashik" class="start-button">Nashik</a>
+        <a href="#nashik-road" class="start-button">Nashik Road</a>
+        <a href="#dwarka" class="start-button">Dwarka</a>
+        <a href="#jail-road" class="start-button">Jail Road</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2 id="nashik">Nashik</h2>
+    <div class="gym-card">
+        <img src="https://images.unsplash.com/photo-1594737625785-cbc6f1bc0c54?auto=format&fit=crop&w=800&q=80" alt="Fit Hub Gym">
+        <div class="gym-details">
+            <h3 class="gym-name">Fit Hub Gym</h3>
+            <p class="gym-address">123 Fitness Street, Nashik</p>
+            <div class="gym-buttons">
+                <a href="https://wa.me/917588498285" target="_blank">WhatsApp</a>
+                <a href="sms:+917588498285">Message</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="gym-card">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80" alt="Power Zone">
+        <div class="gym-details">
+            <h3 class="gym-name">Power Zone</h3>
+            <p class="gym-address">45 Health Street, Nashik</p>
+            <div class="gym-buttons">
+                <a href="https://wa.me/917588498285" target="_blank">WhatsApp</a>
+                <a href="sms:+917588498285">Message</a>
+            </div>
+        </div>
+    </div>
+
+    <h2 id="nashik-road">Nashik Road</h2>
+    <div class="gym-card">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Muscle Zone">
+        <div class="gym-details">
+            <h3 class="gym-name">Muscle Zone</h3>
+            <p class="gym-address">456 Gym Street, Nashik Road</p>
+            <div class="gym-buttons">
+                <a href="https://wa.me/917588498285" target="_blank">WhatsApp</a>
+                <a href="sms:+917588498285">Message</a>
+            </div>
+        </div>
+    </div>
+
+    <h2 id="dwarka">Dwarka</h2>
+    <div class="gym-card">
+        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80" alt="Fit Arena">
+        <div class="gym-details">
+            <h3 class="gym-name">Fit Arena</h3>
+            <p class="gym-address">12 Gym Street, Dwarka</p>
+            <div class="gym-buttons">
+                <a href="https://wa.me/917588498285" target="_blank">WhatsApp</a>
+                <a href="sms:+917588498285">Message</a>
+            </div>
+        </div>
+    </div>
+
+    <h2 id="jail-road">Jail Road</h2>
+    <div class="gym-card">
+        <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=800&q=80" alt="Health Hub">
+        <div class="gym-details">
+            <h3 class="gym-name">Health Hub</h3>
+            <p class="gym-address">5 Wellness Avenue, Jail Road</p>
+            <div class="gym-buttons">
+                <a href="https://wa.me/917588498285" target="_blank">WhatsApp</a>
+                <a href="sms:+917588498285">Message</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p>
+            © 2025 FitFindr. All rights reserved.<br>
+            Designed & Developed by <strong>Krushna Chandrakant Jadhav</strong>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,574 @@
+/* Settings Page Specific Styles */
+
+/* Ensure proper page layout for footer visibility and scrolling */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.settings-container {
+    flex: 1;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 100px 0 50px;
+    min-height: calc(100vh - 200px); /* Ensure minimum height but allow scrolling */
+}
+
+.settings-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.settings-header h1 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+.settings-header p {
+    color: var(--accent);
+    font-size: 1.1rem;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem 1rem; /* Add horizontal padding and space before footer */
+}
+
+.settings-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.settings-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--light);
+}
+
+.card-header .icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.card-header h3 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.3rem;
+}
+
+.card-header p {
+    margin: 0;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    z-index: 2;
+    font-size: 1rem;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 15px 50px 15px 45px; /* Added right padding for eye icon */
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    box-sizing: border-box;
+}
+
+.input-container input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--accent);
+    cursor: pointer;
+    padding: 8px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: var(--primary);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.toggle-password i {
+    font-size: 1rem;
+    position: static;
+    transform: none;
+}
+
+/* Profile Info Styles */
+.profile-info p {
+    margin: 0;
+    padding: 0.75rem;
+    background: var(--light);
+    border-radius: 6px;
+    color: var(--accent);
+    border-left: 4px solid var(--primary);
+}
+
+/* Alert Boxes */
+.alert-box {
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.alert-info {
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+    color: #0c5460;
+}
+
+.alert-box h4 {
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.alert-box h4 i {
+    margin-right: 0.5rem;
+}
+
+.alert-box p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Button Styles */
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    border: none;
+    color: white;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border: none;
+    color: white;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    border: none;
+    color: white;
+}
+
+/* Device Info Styles */
+.device-info p {
+    font-size: 0.85rem;
+    word-break: break-all;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto !important;
+    }
+    
+    .settings-container {
+        padding: 80px 0 30px;
+        min-height: auto;
+    }
+    
+    .settings-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem 2rem 1rem;
+    }
+    
+    .settings-card {
+        padding: 1.5rem;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .card-header .icon-circle {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .settings-header h1 {
+        font-size: 2rem;
+    }
+    
+    .settings-header {
+        margin-bottom: 2rem;
+    }
+    
+    /* Mobile-specific input and eye icon fixes */
+    .input-container input {
+        padding: 16px 50px 16px 45px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .toggle-password {
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        padding: 10px;
+    }
+    
+    .toggle-password i {
+        font-size: 1.1rem;
+    }
+    
+    .input-container i {
+        left: 12px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Footer Specific Styles for Settings Page */
+footer {
+    background: var(--primary) !important;
+    color: white !important;
+    padding: 3rem 0 1rem !important;
+    margin-top: auto !important;
+    width: 100% !important;
+    display: block !important;
+    position: relative !important;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer .footer-content {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+footer .footer-column h3 {
+    color: white !important;
+    margin-bottom: 1rem !important;
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+}
+
+footer .footer-column p {
+    color: rgba(255, 255, 255, 0.8) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1rem !important;
+}
+
+footer .footer-links {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+footer .footer-links li {
+    margin-bottom: 0.5rem !important;
+}
+
+footer .footer-links a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+footer .footer-links a:hover {
+    color: white !important;
+}
+
+footer .footer-links i {
+    margin-right: 8px !important;
+    width: 16px !important;
+}
+
+footer .social-links {
+    display: flex !important;
+    gap: 1rem !important;
+    margin-top: 1rem !important;
+}
+
+footer .social-links a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 50% !important;
+    color: white !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+}
+
+footer .social-links a:hover {
+    background: var(--secondary) !important;
+    transform: translateY(-2px) !important;
+}
+
+footer .copyright {
+    text-align: center !important;
+    padding-top: 2rem !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.9rem !important;
+}
+
+footer .copyright p {
+    margin: 0 !important;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-to-top.show {
+    display: flex;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure proper scrolling behavior */
+.settings-page-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Fix for any potential layout issues */
+header {
+    position: relative;
+    z-index: 100;
+}
+
+footer {
+    position: relative;
+    z-index: 50;
+}
+/* Enhanced Eye Icon Styling */
+.toggle-password {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.toggle-password:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.toggle-password:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Ensure eye icons are perfectly centered */
+.input-container .fas.fa-eye,
+.input-container .fas.fa-eye-slash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fix for any potential icon alignment issues */
+.toggle-password .fas {
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* Additional hover effects for better UX */
+.input-container:hover .toggle-password {
+    color: var(--primary);
+}
+
+.input-container input:focus + .toggle-password,
+.input-container input:focus ~ .toggle-password {
+    color: var(--primary);
+}
+
+/* Ensure proper spacing and alignment */
+.form-group .input-container {
+    margin-bottom: 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Fix for password field styling consistency */
+.input-container input[type="password"],
+.input-container input[type="text"] {
+    padding-right: 50px !important;
+}

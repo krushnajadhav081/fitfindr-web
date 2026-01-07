@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>FitFindr | Find Fitness Classes Anywhere</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="home.html" class="logo">FitFindr<span>Class</span></a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="classes.html">Classes</a></li>
+
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#" class="logout-link" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+            <button class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+           <h1 id="welcomeMessage">Find Fitness Classes Anywhere</h1>
+<p>
+FitFindr helps you discover gym, yoga, dance, and wellness classes across cities —
+with one lifetime membership.
+</p>
+
+            <div class="hero-buttons">
+               <a href="classes.html" class="btn">Find Classes Near Me</a>
+<a href="membership.html" class="btn btn-secondary">Get Lifetime Access</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section style="background: var(--primary); color: var(--white); padding: 60px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; text-align: center;">
+                <div>
+                    <h2 style="color: var(--white); font-size: 3rem; margin-bottom: 0.5rem;">10,000+</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">Registered Users</p>
+                </div>
+                <div>
+                    <h2 style="color: var(--white); font-size: 3rem; margin-bottom: 0.5rem;">500+</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">Partner Gyms & Studios</p>
+                </div>
+                <div>
+                    <h2 style="color: var(--white); font-size: 3rem; margin-bottom: 0.5rem;">1200+</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">Classes Available</p>
+                </div>
+                <div>
+                    <h2 style="color: var(--white); font-size: 3rem; margin-bottom: 0.5rem;">30</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.9;">Cities Covered</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- About Section -->
+<section style="padding: 80px 0; background: var(--white);">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; align-items: center;">
+            
+            <!-- Text Content -->
+            <div>
+                <h2 style="text-align: left; margin-bottom: 1.5rem;">
+                    What is FitFindr?
+                </h2>
+
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1rem;">
+                    FitFindr is a fitness discovery platform that helps users find gyms, yoga studios,
+                    dance classes, and wellness centers across different cities — all in one place.
+                </p>
+
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                    Whether you are traveling, relocating, or exploring new fitness options,
+                    FitFindr ensures your fitness journey continues without interruption.
+                </p>
+
+                <a href="classes.html" class="btn">
+                    Find Classes Near You
+                </a>
+            </div>
+
+            <!-- Image -->
+            <div style="
+                background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                url('https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+                background-size: cover;
+                background-position: center;
+                height: 400px;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+            ">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  <!-- Testimonials Section -->
+<section style="padding: 80px 0; background: var(--light);">
+    <div class="container">
+        <h2>What Our Users Say</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+
+            <!-- Testimonial 1 -->
+            <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow);">
+                <div style="display: flex; gap: 0.3rem; margin-bottom: 1rem; color: var(--primary);">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p style="font-style: italic; margin-bottom: 1.5rem;">
+                    “FitFindr helped me continue my gym routine even when I traveled to another city.
+                    One app, many fitness options.”
+                </p>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">AK</div>
+                    <div>
+                        <h4 style="margin: 0;">Yashraj </h4>
+                        <p style="margin: 0; color: var(--accent); font-size: 0.9rem;">Traveling Professional</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow);">
+                <div style="display: flex; gap: 0.3rem; margin-bottom: 1rem; color: var(--primary);">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p style="font-style: italic; margin-bottom: 1.5rem;">
+                    “I discovered yoga and dance classes near my home that I never knew existed.
+                    FitFindr made fitness simple.”
+                </p>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">SP</div>
+                    <div>
+                        <h4 style="margin: 0;">Soheet Patil</h4>
+                        <p style="margin: 0; color: var(--accent); font-size: 0.9rem;">Yoga Enthusiast</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div style="background: var(--white); padding: 2rem; border-radius: var(--radius); box-shadow: var(--shadow);">
+                <div style="display: flex; gap: 0.3rem; margin-bottom: 1rem; color: var(--primary);">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p style="font-style: italic; margin-bottom: 1.5rem;">
+                    “FitFindr saves time and money. I don’t need separate memberships anymore.
+                    Everything is available in one platform.”
+                </p>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">RJ</div>
+                    <div>
+                        <h4 style="margin: 0;">prashant </h4>
+                        <p style="margin: 0; color: var(--accent); font-size: 0.9rem;">Fitness Explorer</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section style="
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+    url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+">
+    <div class="container">
+        <h2 style="color: var(--white); font-size: 2.8rem; margin-bottom: 1rem;">
+            Your Fitness Should Travel With You
+        </h2>
+
+        <p style="font-size: 1.2rem; max-width: 750px; margin: 0 auto 2.5rem; opacity: 0.9;">
+            FitFindr connects you to gyms, yoga, dance, and fitness classes across cities —
+            with one simple membership.
+        </p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="classes.html" class="btn" style="font-size: 1.1rem; padding: 15px 40px;">
+                Find Classes Near Me
+            </a>
+            <a href="membership.html" class="btn btn-secondary" style="font-size: 1.1rem; padding: 15px 40px;">
+                Join FitFindr
+            </a>
+        </div>
+    </div>
+</section>
+
+   <!-- Footer -->
+<footer style="background:#0f0f0f; color:#ffffff; padding:60px 0 30px;">
+    <div class="container" style="max-width:1200px; margin:auto; padding:0 20px;">
+        
+        <div class="footer-content" style="
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap:40px;
+            margin-bottom:40px;
+        ">
+
+            <!-- Brand Info -->
+            <div class="footer-column">
+                <h3 style="margin-bottom:15px;">FitFindr</h3>
+                <p style="line-height:1.7; opacity:0.85;">
+                    FitFindr helps you discover the best gyms, fitness studios, and training centers near you. 
+                    Compare, explore, and start your fitness journey with confidence.
+                </p>
+
+                <div class="social-links" style="margin-top:20px;">
+                    <a href="#" style="margin-right:12px; color:#fff;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" style="margin-right:12px; color:#fff;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="margin-right:12px; color:#fff;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" style="color:#fff;"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3 style="margin-bottom:15px;">Quick Links</h3>
+                <ul class="footer-links" style="list-style:none; padding:0; line-height:2;">
+                    <li><a href="home.html" style="color:#fff; opacity:0.85;">Home</a></li>
+                    <li><a href="features.html" style="color:#fff; opacity:0.85;">Features</a></li>
+                    <li><a href="classes.html" style="color:#fff; opacity:0.85;">Classes</a></li>
+                    <li><a href="membership.html" style="color:#fff; opacity:0.85;">Membership</a></li>
+                    <li><a href="trainers.html" style="color:#fff; opacity:0.85;">Trainers</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-column">
+                <h3 style="margin-bottom:15px;">Contact Information</h3>
+                <ul class="footer-links" style="list-style:none; padding:0; line-height:2;">
+                    <li><i class="fas fa-map-marker-alt"></i> Nashik, Maharashtra, India</li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+919798990420" style="color:#fff; opacity:0.85;">
+                            +91 97989 90420
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:krushnacjadhav081@gmail.com" style="color:#fff; opacity:0.85;">
+                            krushnacjadhav081@gmail.com
+                        </a>
+                    </li>
+                    <li><i class="fas fa-clock"></i> Mon – Sun: 5:00 AM – 11:00 PM</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright" style="
+            border-top:1px solid rgba(255,255,255,0.1);
+            padding-top:20px;
+            text-align:center;
+            font-size:13px;
+            opacity:0.7;
+        ">
+            <p>
+                © 2025 FitFindr. All rights reserved.<br>
+                Created by <strong>Krishna Chandrakant Jadhav</strong> |
+                <a href="mailto:krushna081@gmail.com" style="color:#fff;">krushna081@gmail.com</a>
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+
+    <script src="js/main.js"></script>
+    <script>
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (!isLoggedIn) {
+                window.location.href = 'login.html';
+            } else {
+                // Personalize welcome message
+                const userName = localStorage.getItem('userName') || 'User';
+                const welcomeMessage = document.getElementById('welcomeMessage');
+                if (welcomeMessage) {
+                    welcomeMessage.textContent = `Welcome Back, ${userName}!`;
+                }
+            }
+        });
+
+        // Logout function with animated message
+        function logout() {
+            // Show animated logout message
+            showLogoutMessage();
+            
+            // Clear session data after animation starts
+            setTimeout(() => {
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('userEmail');
+                localStorage.removeItem('userName');
+                localStorage.removeItem('userId');
+                localStorage.removeItem('membershipType');
+                localStorage.removeItem('FitFindrSession');
+                
+                // Redirect after message animation
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);
+            }, 500);
+        }
+
+        // Show animated logout success message
+        function showLogoutMessage() {
+            const messageDiv = document.createElement('div');
+            messageDiv.id = 'logout-message';
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 32px 40px;
+                border-radius: 20px;
+                z-index: 10001;
+                text-align: center;
+                box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+                backdrop-filter: blur(15px);
+                border: 2px solid rgba(255,255,255,0.2);
+                min-width: 350px;
+                max-width: 90vw;
+                animation: logoutBounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+            `;
+            
+            messageDiv.innerHTML = `
+                <div style="margin-bottom: 16px;">
+                    <i class="fas fa-sign-out-alt" style="font-size: 3rem; color: #fff; animation: logoutIconSpin 1s ease-in-out;"></i>
+                </div>
+                <div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 8px;">
+                    👋 Goodbye!
+                </div>
+                <div style="font-size: 1rem; opacity: 0.9; line-height: 1.4;">
+                    You have been logged out successfully!<br>
+                    <small style="opacity: 0.7;">Redirecting to login page...</small>
+                </div>
+                <div style="margin-top: 20px;">
+                    <div style="width: 200px; height: 4px; background: rgba(255,255,255,0.3); border-radius: 2px; margin: 0 auto; overflow: hidden;">
+                        <div style="width: 0; height: 100%; background: linear-gradient(90deg, #fff, #f0f0f0); border-radius: 2px; animation: progressBar 2s ease-in-out forwards;"></div>
+                    </div>
+                </div>
+            `;
+            
+            // Add logout animation styles
+            if (!document.getElementById('logout-animations')) {
+                const animationStyles = document.createElement('style');
+                animationStyles.id = 'logout-animations';
+                animationStyles.textContent = `
+                    @keyframes logoutBounceIn {
+                        0% { 
+                            transform: translate(-50%, -50%) scale(0) rotate(-180deg); 
+                            opacity: 0; 
+                        }
+                        50% { 
+                            transform: translate(-50%, -50%) scale(1.1) rotate(10deg); 
+                            opacity: 1; 
+                        }
+                        100% { 
+                            transform: translate(-50%, -50%) scale(1) rotate(0deg); 
+                            opacity: 1; 
+                        }
+                    }
+                    
+                    @keyframes logoutIconSpin {
+                        0% { transform: rotate(0deg) scale(1); }
+                        50% { transform: rotate(180deg) scale(1.2); }
+                        100% { transform: rotate(360deg) scale(1); }
+                    }
+                    
+                    @keyframes progressBar {
+                        0% { width: 0%; }
+                        100% { width: 100%; }
+                    }
+                    
+                    @keyframes logoutFadeOut {
+                        0% { 
+                            transform: translate(-50%, -50%) scale(1); 
+                            opacity: 1; 
+                        }
+                        100% { 
+                            transform: translate(-50%, -50%) scale(0.8); 
+                            opacity: 0; 
+                        }
+                    }
+                `;
+                document.head.appendChild(animationStyles);
+            }
+            
+            document.body.appendChild(messageDiv);
+            
+            // Auto-hide after delay
+            setTimeout(() => {
+                messageDiv.style.animation = 'logoutFadeOut 0.5s ease-in-out forwards';
+                setTimeout(() => {
+                    if (document.body.contains(messageDiv)) {
+                        document.body.removeChild(messageDiv);
+                    }
+                }, 500);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
